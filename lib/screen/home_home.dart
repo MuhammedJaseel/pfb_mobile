@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
+import 'package:pfb_mobile/screen/noti.dart';
 import 'package:pfb_mobile/widget/home.dart';
 import 'package:pfb_mobile/widget/home_bottembar.dart';
 import 'package:pfb_mobile/widget/home_stream.dart';
@@ -55,7 +56,11 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const NotiScreen()),
+                          ),
                           icon: const Icon(
                             Icons.notifications_none_outlined,
                             size: 34,
@@ -71,7 +76,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: scr.height - 140,
               child: ListView(
-                padding: const EdgeInsets.all(0),
+                padding: const EdgeInsets.only(top: 15),
                 children: [
                   SizedBox(
                     height: 130,

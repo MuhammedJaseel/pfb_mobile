@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
+import 'package:pfb_mobile/screen/chat_personal.dart';
 import 'package:pfb_mobile/widget/home_bottembar.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -50,56 +51,87 @@ class ChatScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(0),
                 children: [
                   for (var i = 0; i < 10; i++)
-                    Container(
-                      height: 87,
-                      padding: EdgeInsets.only(right: scr.width * .02),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 7,
-                            decoration: BoxDecoration(
-                              color: (i % 2 == 1) ? Colors.blue : Colors.white,
-                              borderRadius: const BorderRadius.only(
-                                bottomRight: Radius.circular(7),
-                                topRight: Radius.circular(7),
+                    InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ChatPersonalScreen(),
+                        ),
+                      ),
+                      child: Container(
+                        height: 87,
+                        padding: EdgeInsets.only(right: scr.width * .02),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 7,
+                              decoration: BoxDecoration(
+                                color:
+                                    (i % 2 == 1) ? Colors.blue : Colors.white,
+                                borderRadius: const BorderRadius.only(
+                                  bottomRight: Radius.circular(7),
+                                  topRight: Radius.circular(7),
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: scr.width * .04),
-                          Container(
-                            width: 60,
-                            height: 60,
-                            decoration: const BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(30),
+                            SizedBox(width: scr.width * .04),
+                            Container(
+                              width: 60,
+                              height: 60,
+                              decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(30)),
                               ),
-                              child: Image.network(
-                                "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
-                                fit: BoxFit.cover,
+                              child: ClipRRect(
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(30),
+                                ),
+                                child: Image.network(
+                                  "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: scr.width * .04),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            SizedBox(width: scr.width * .04),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    "Whats new !",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 34, 34, 34),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  ),
+                                  SizedBox(height: 3),
+                                  Text(
+                                    "Whats new !",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 141, 141, 141),
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: scr.width * .02),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: const [
                                 Text(
-                                  "Whats new !",
+                                  "5:30 PM",
                                   style: TextStyle(
-                                    color: Color.fromARGB(255, 34, 34, 34),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w800,
+                                    color: Color.fromARGB(255, 141, 141, 141),
+                                    fontSize: 13,
                                   ),
                                 ),
-                                SizedBox(height: 3),
+                                SizedBox(height: 18),
                                 Text(
-                                  "Whats new !",
+                                  "15 Messages",
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 141, 141, 141),
                                     fontSize: 12,
@@ -107,30 +139,8 @@ class ChatScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                          ),
-                          SizedBox(width: scr.width * .02),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Text(
-                                "5:30 PM",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 141, 141, 141),
-                                  fontSize: 13,
-                                ),
-                              ),
-                              SizedBox(height: 18),
-                              Text(
-                                "15 Messages",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 141, 141, 141),
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                 ],

@@ -145,11 +145,11 @@ class QandABody extends StatefulWidget {
 
 class _QandABodyState extends State<QandABody> {
   int tab = 0;
+  final tabs = ["You", "Family", "Intrests", "Hobbies"];
 
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
-    const tabs = ["You", "Family", "Intrests", "Hobbies"];
     return Column(
       children: [
         const SizedBox(height: 32),

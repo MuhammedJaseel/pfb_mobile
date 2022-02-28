@@ -21,3 +21,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - asset/x8Bg.png
+    - asset/x8Border.png
+    - asset/x6Bg.png
+    - asset/x6Border.png
+    - asset/x5Bg.png
+    - asset/x5Border.png
+    - asset/x4Bg.png
+    - asset/x4Border.png
