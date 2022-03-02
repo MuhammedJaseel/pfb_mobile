@@ -10,6 +10,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
+
     return Scaffold(
       body: SizedBox(
         width: scr.width,
@@ -41,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
                           context,
                           PageRouteBuilder(
                             pageBuilder: (context, animation1, animation2) =>
-                                ProfileMenuScreen(),
+                                const ProfileMenuScreen(),
                             // transitionDuration: Duration.zero,
                             // reverseTransitionDuration: Duration.zero,
                           ),
@@ -62,36 +63,32 @@ class ProfileScreen extends StatelessWidget {
               child: ListView(
                 children: [
                   SizedBox(
-                    height: scr.width * 1.2,
+                    height: scr.width * 1.3,
                     child: Stack(
-                      children: [
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          height: 100,
-                          width: 100,
-                          child: Image.network(
-                            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/330px-Bill_Gates_2017_%28cropped%29.jpg",
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          height: 100,
-                          width: 100,
-                          child: Image.asset(
-                            "asset/x8Bg.png",
-                            color: Colors.white,
-                          ),
-                        ),
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          height: 100,
-                          width: 100,
-                          child: Image.asset("asset/x8Border.png"),
-                        ),
+                      children: const [
+                        ProfileFrameLine(1.4, .1),
+                        ProfileFramedPhoto('6', .18, .4, .1),
+                        ProfileFrameLine(1.6, .1),
+                        ProfileFramedPhoto('6', .18, .6, .1),
+                        //
+                        ProfileFrameLine(.2, .2),
+                        ProfileFramedPhoto('8', .15, .8, .7),
+                        ProfileFrameLine(0, .2),
+                        ProfileFramedPhoto('8', .15, .8, .5),
+                        ProfileFrameLine(1.8, .2),
+                        ProfileFramedPhoto('8', .15, .8, .3),
+                        //
+                        ProfileFrameLine(1.2, .2),
+                        ProfileFramedPhoto('8', .15, .2, .3),
+                        ProfileFrameLine(1, .2),
+                        ProfileFramedPhoto('8', .15, .2, .5),
+                        ProfileFrameLine(.8, .2),
+                        ProfileFramedPhoto('8', .15, .2, .7),
+                        //
+                        ProfileFrameLine(.6, .1),
+                        ProfileFramedPhoto('5', .18, .4, .9),
+                        ProfileFrameLine(.4, .1),
+                        ProfileFramedPhoto('5', .18, .6, .9),
                       ],
                     ),
                   ),

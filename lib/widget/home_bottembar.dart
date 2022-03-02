@@ -14,7 +14,13 @@ class HomeBottemBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
-    return SizedBox(
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(spreadRadius: 2, blurRadius: 3, color: Colors.black12),
+        ],
+      ),
       height: 60,
       child: Row(
         children: [

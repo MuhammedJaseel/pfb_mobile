@@ -121,7 +121,6 @@ class ProfileDocuments extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size scr = getScr(context);
     return Column(
       children: [
         InkWell(
@@ -156,6 +155,67 @@ class ProfileDocuments extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class ProfileFramedPhoto extends StatelessWidget {
+  final String t;
+  final double s;
+  final double x, y;
+  const ProfileFramedPhoto(this.t, this.s, this.x, this.y, {Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size scr = getScr(context);
+    double fW = scr.width;
+    double fH = scr.width;
+    double dW = scr.width * s;
+    double h = (t == '8' ? dW : (t == "6" ? dW : (t == '5' ? (dW * .96) : dW)));
+    double w = (t == '8' ? dW : (t == "6" ? (dW * .91) : (t == '5' ? dW : dW)));
+    return Positioned(
+      top: fH * y - dW / 2,
+      left: fW * x - dW / 2,
+      height: h,
+      width: w,
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/330px-Bill_Gates_2017_%28cropped%29.jpg",
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Image.asset(
+          "asset/x${t}frame.png",
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileFrameLine extends StatelessWidget {
+  final double angle;
+  final double size;
+  const ProfileFrameLine(this.angle, this.size, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size scr = getScr(context);
+    return Positioned(
+      top: scr.width * .5,
+      left: scr.width * .5,
+      right: scr.width * size,
+      child: Transform(
+        transform: Matrix4.skewY(0)..rotateZ(angle * (22 / 7)),
+        child: Container(
+          height: 1,
+          color: const Color(0xFFBFBFBF),
+        ),
+      ),
     );
   }
 }

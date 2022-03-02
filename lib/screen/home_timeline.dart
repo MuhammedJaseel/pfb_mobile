@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
+import 'package:pfb_mobile/screen/create_timeline.dart';
 import 'package:pfb_mobile/widget/home_bottembar.dart';
 
 class TimeLineScreen extends StatefulWidget {
@@ -95,24 +96,35 @@ class _TimeLineScreenState extends State<TimeLineScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: scr.width * .16,
-                        height: scr.width * .16,
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(31, 128, 128, 128),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(scr.width * .15),
+                      InkWell(
+                        onTap: (() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const CreateTimelineScreen(),
+                            ),
+                          );
+                        }),
+                        child: Container(
+                          width: scr.width * .16,
+                          height: scr.width * .16,
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(31, 128, 128, 128),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(scr.width * .15),
+                            ),
+                            border: Border.all(
+                              width: 3,
+                              color: const Color.fromARGB(31, 76, 76, 76),
+                            ),
                           ),
-                          border: Border.all(
-                            width: 3,
-                            color: const Color.fromARGB(31, 76, 76, 76),
+                          alignment: Alignment.center,
+                          child: const Icon(
+                            Icons.add,
+                            size: 30,
+                            color: Colors.black12,
                           ),
-                        ),
-                        alignment: Alignment.center,
-                        child: const Icon(
-                          Icons.add,
-                          size: 30,
-                          color: Colors.black12,
                         ),
                       ),
                     ],

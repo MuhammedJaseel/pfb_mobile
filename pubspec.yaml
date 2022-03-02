@@ -23,11 +23,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - asset/x8Bg.png
-    - asset/x8Border.png
-    - asset/x6Bg.png
-    - asset/x6Border.png
-    - asset/x5Bg.png
-    - asset/x5Border.png
-    - asset/x4Bg.png
-    - asset/x4Border.png
+    - asset/x8frame.png
+    - asset/x6frame.png
+    - asset/x5frame.png
+    - asset/x4frame.png
+
