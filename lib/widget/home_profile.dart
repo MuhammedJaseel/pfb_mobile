@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
+import 'package:pfb_mobile/screen/create_member.dart';
 
 class ProfileAbout extends StatelessWidget {
   const ProfileAbout({Key? key}) : super(key: key);
@@ -179,18 +180,26 @@ class ProfileFramedPhoto extends StatelessWidget {
       left: fW * x - dW / 2,
       height: h,
       width: w,
-      child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/330px-Bill_Gates_2017_%28cropped%29.jpg",
-            ),
-            fit: BoxFit.cover,
+      child: InkWell(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const CreateMemberScreen(),
           ),
         ),
-        child: Image.asset(
-          "asset/x${t}frame.png",
-          fit: BoxFit.cover,
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/330px-Bill_Gates_2017_%28cropped%29.jpg",
+              ),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Image.asset(
+            "asset/x" + t + ".png",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

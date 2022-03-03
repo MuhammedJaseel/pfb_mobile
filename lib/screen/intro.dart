@@ -12,6 +12,27 @@ class IntroPage extends StatefulWidget {
 class _IntroPageState extends State<IntroPage> {
   int page = 0;
 
+  List items = [
+    {
+      "title": "Lorem Ipsum Dolor",
+      "img": "asset/intro1.png",
+      "desc":
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolorem magna aliquam erat volutpat.",
+    },
+    {
+      "title": "Lorem Ipsum Dolor",
+      "img": "asset/intro2.png",
+      "desc":
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolorem magna aliquam erat volutpat.",
+    },
+    {
+      "title": "Lorem Ipsum Dolor",
+      "img": "asset/intro3.png",
+      "desc":
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolorem magna aliquam erat volutpat.",
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
@@ -25,10 +46,17 @@ class _IntroPageState extends State<IntroPage> {
             const SizedBox(),
             Column(
               children: [
-                const Text(
-                  "Lorem Ipsum Dolor",
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: scr.width * .05,
+                    vertical: 25,
+                  ),
+                  child: Image.asset(items[page]['img']),
+                ),
+                Text(
+                  items[page]['title'],
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color.fromARGB(206, 37, 37, 37),
                     fontSize: 21,
                     fontWeight: FontWeight.w700,
@@ -36,10 +64,10 @@ class _IntroPageState extends State<IntroPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.all(scr.height * .05),
-                  child: const Text(
-                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolorem magna aliquam erat volutpat.",
+                  child: Text(
+                    items[page]['desc'],
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color.fromARGB(255, 128, 128, 128),
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
@@ -50,16 +78,19 @@ class _IntroPageState extends State<IntroPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     for (var i = 0; i < 3; i++)
-                      Container(
-                        height: 6,
-                        width: page == i ? 22 : 6,
-                        margin: const EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(3)),
-                          color: page == i
-                              ? const Color(0xFF117BD3)
-                              : const Color.fromARGB(255, 173, 173, 173),
+                      InkWell(
+                        onTap: (() => setState(() => page = i)),
+                        child: Container(
+                          height: 6,
+                          width: page == i ? 22 : 6,
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(3)),
+                            color: page == i
+                                ? const Color(0xFF117BD3)
+                                : const Color.fromARGB(255, 173, 173, 173),
+                          ),
                         ),
                       ),
                   ],

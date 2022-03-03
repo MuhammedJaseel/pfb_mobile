@@ -28,11 +28,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(
-                            Icons.menu,
-                            size: 34,
-                            color: Colors.black54,
-                          ),
+                          icon: Image.asset("asset/icon_drower.png", width: 25),
                         ),
                         const Text(
                           "Perfect Family Builder",
@@ -49,23 +45,16 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(
-                            Icons.search,
-                            size: 34,
-                            color: Colors.black54,
-                          ),
+                          icon: Image.asset("asset/icon_search.png", width: 25),
                         ),
                         IconButton(
                           onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const NotiScreen()),
+                              builder: (context) => const NotiScreen(),
+                            ),
                           ),
-                          icon: const Icon(
-                            Icons.notifications_none_outlined,
-                            size: 34,
-                            color: Colors.black54,
-                          ),
+                          icon: Image.asset("asset/icon_bell.png", width: 25),
                         ),
                       ],
                     ),

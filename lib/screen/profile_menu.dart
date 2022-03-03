@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfb_mobile/screen/profile_edit.dart';
 
 class ProfileMenuScreen extends StatelessWidget {
   const ProfileMenuScreen({Key? key}) : super(key: key);
@@ -32,6 +33,24 @@ class ProfileMenuScreen extends StatelessWidget {
                     onTap: (() {}),
                     child: const Text(
                       "Update Profile",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 34,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 27),
+                  InkWell(
+                    onTap: (() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfileEditScreen()),
+                      );
+                    }),
+                    child: const Text(
+                      "Edit Profile",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 34,

@@ -23,8 +23,34 @@ flutter:
   uses-material-design: true
 
   assets:
-    - asset/x8frame.png
-    - asset/x6frame.png
-    - asset/x5frame.png
-    - asset/x4frame.png
+    - asset/x8m.png
+    - asset/x8f.png
+    - asset/x6m.png
+    - asset/x6f.png
+    - asset/x5m.png
+    - asset/x5f.png
+    - asset/x4m.png
+    - asset/x4f.png
+    - asset/intro1.png
+    - asset/intro2.png
+    - asset/intro3.png
+    - asset/login_bg.png
+    - asset/x8.png
+    - asset/x6.png
+    - asset/x5.png
+    - asset/x4.png
+    - asset/x_4.png
 
+    - asset/icon_drower.png
+    - asset/icon_search.png
+    - asset/icon_bell.png
+    - asset/icon_home.png
+    - asset/icon_chat.png
+    - asset/icon_qanda.png
+    - asset/icon_timeline.png
+    - asset/icon_profile.png
+    - asset/icon_home_w.png
+    - asset/icon_chat_w.png
+    - asset/icon_qanda_w.png
+    - asset/icon_timeline_w.png
+    - asset/icon_profile_w.png

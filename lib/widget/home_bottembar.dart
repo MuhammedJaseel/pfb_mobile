@@ -25,13 +25,11 @@ class HomeBottemBar extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(width: scr.width * .02),
-          EachBtn("Home", tab == 0, Icons.home, const HomeScreen()),
-          EachBtn("Chat", tab == 1, Icons.message, const ChatScreen()),
-          EachBtn(
-              "Q & A", tab == 2, Icons.question_answer, const QandAScreen()),
-          EachBtn(
-              "Timeline", tab == 3, Icons.timelapse, const TimeLineScreen()),
-          EachBtn("Profle", tab == 4, Icons.person, const ProfileScreen()),
+          EachBtn("Home", tab == 0, "home", const HomeScreen()),
+          EachBtn("Chat", tab == 1, "chat", const ChatScreen()),
+          EachBtn("Q & A", tab == 2, "qanda", const QandAScreen()),
+          EachBtn("Timeline", tab == 3, "timeline", const TimeLineScreen()),
+          EachBtn("Profle", tab == 4, "profile", const ProfileScreen()),
           SizedBox(width: scr.width * .02),
         ],
       ),
@@ -41,7 +39,7 @@ class HomeBottemBar extends StatelessWidget {
 
 class EachBtn extends StatelessWidget {
   final bool selected;
-  final IconData icon;
+  final String icon;
   final String text;
   final Widget screen;
   const EachBtn(this.text, this.selected, this.icon, this.screen, {Key? key})
@@ -53,10 +51,6 @@ class EachBtn extends StatelessWidget {
     if (!selected) {
       return InkWell(
         onTap: (() {
-          // Navigator.pushReplacement(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => screen),
-          // );
           Navigator.pushReplacement(
             context,
             PageRouteBuilder(
@@ -69,11 +63,7 @@ class EachBtn extends StatelessWidget {
         child: Container(
           width: scr.width * .16,
           alignment: Alignment.center,
-          child: Icon(
-            icon,
-            size: 30,
-            color: Colors.black26,
-          ),
+          child: Image.asset("asset/icon_" + icon + ".png", width: 25),
         ),
       );
     } else {
@@ -88,10 +78,10 @@ class EachBtn extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                size: 32,
-                color: const Color.fromARGB(255, 255, 255, 255),
+              Image.asset(
+                "asset/icon_" + icon + "_w.png",
+                width: 25,
+                color: Colors.white,
               ),
               SizedBox(width: scr.width * .03),
               Text(
