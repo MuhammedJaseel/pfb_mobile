@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pfb_mobile/main.dart';
 import 'package:pfb_mobile/module/screen.dart';
 import 'package:pfb_mobile/screen/home_chat.dart';
 import 'package:pfb_mobile/screen/home_home.dart';

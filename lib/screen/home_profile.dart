@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
+import 'package:pfb_mobile/screen/fammily_tree.dart';
 import 'package:pfb_mobile/screen/profile_menu.dart';
 import 'package:pfb_mobile/widget/home_bottembar.dart';
 import 'package:pfb_mobile/widget/home_profile.dart';
@@ -12,6 +13,7 @@ class ProfileScreen extends StatelessWidget {
     Size scr = getScr(context);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SizedBox(
         width: scr.width,
         height: scr.height,
@@ -65,30 +67,71 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: scr.width * 1.3,
                     child: Stack(
-                      children: const [
-                        ProfileFrameLine(1.4, .1),
-                        ProfileFramedPhoto('6m', .18, .4, .1),
-                        ProfileFrameLine(1.6, .1),
-                        ProfileFramedPhoto('6m', .18, .6, .1),
+                      children: [
+                        const ProfileFrameLine(1.4, .1),
+                        const ProfileFramedPhoto('6m', .18, .4, .13),
+                        const ProfileFrameLine(1.6, .1),
+                        const ProfileFramedPhoto('6f', .18, .6, .13),
                         //
-                        ProfileFrameLine(.2, .2),
-                        ProfileFramedPhoto('8m', .15, .8, .7),
-                        ProfileFrameLine(0, .2),
-                        ProfileFramedPhoto('8m', .15, .8, .5),
-                        ProfileFrameLine(1.8, .2),
-                        ProfileFramedPhoto('8m', .15, .8, .3),
+                        const ProfileFrameLine(.17, .2),
+                        const ProfileFramedPhoto('8f', .13, .8, .67),
+                        const ProfileFrameLine(0, .2),
+                        const ProfileFramedPhoto('8f', .13, .8, .5),
+                        const ProfileFrameLine(1.83, .2),
+                        const ProfileFramedPhoto('8f', .13, .8, .33),
                         //
-                        ProfileFrameLine(1.2, .2),
-                        ProfileFramedPhoto('8m', .15, .2, .3),
-                        ProfileFrameLine(1, .2),
-                        ProfileFramedPhoto('8m', .15, .2, .5),
-                        ProfileFrameLine(.8, .2),
-                        ProfileFramedPhoto('8m', .15, .2, .7),
+                        const ProfileFrameLine(1.17, .2),
+                        const ProfileFramedPhoto('8m', .13, .2, .33),
+                        const ProfileFrameLine(1, .2),
+                        const ProfileFramedPhoto('8m', .13, .2, .5),
+                        const ProfileFrameLine(.83, .2),
+                        const ProfileFramedPhoto('8m', .13, .2, .67),
                         //
-                        ProfileFrameLine(.6, .1),
-                        ProfileFramedPhoto('5m', .18, .4, .9),
-                        ProfileFrameLine(.4, .1),
-                        ProfileFramedPhoto('5m', .18, .6, .9),
+                        const ProfileFrameLine(.7, .1),
+                        const ProfileFramedPhoto('5f', .18, .3, .85),
+                        const ProfileFrameLine(.3, .1),
+                        const ProfileFramedPhoto('5f', .18, .7, .85),
+                        //
+                        // const ProfileFrameLine1(.3, .1, .3, .85),
+                        // const ProfileFrameLine1(.3, .1, .7, .85),
+                        //
+                        Positioned(
+                          top: scr.width * .38,
+                          left: scr.width * .38,
+                          child: Container(
+                            width: scr.width * .26,
+                            height: scr.width * .26,
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 3, color: Colors.blue),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(scr.width * .15),
+                              ),
+                              color: Colors.white,
+                            ),
+                            padding: const EdgeInsets.all(2),
+                            child: InkWell(
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const FamilyTreeScreen(),
+                                ),
+                              ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(scr.width * .15),
+                                  ),
+                                  image: const DecorationImage(
+                                    image: NetworkImage(
+                                      "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -98,10 +141,17 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       SizedBox(width: scr.width * .07),
                       Container(
-                        width: scr.width * .2,
-                        height: scr.width * .2,
-                        padding: const EdgeInsets.all(2),
+                        width: scr.width * .21,
+                        height: scr.width * .21,
                         decoration: BoxDecoration(
+                          border: Border.all(width: 2, color: Colors.blue),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(scr.width * .1),
+                          ),
+                        ),
+                        padding: const EdgeInsets.all(1),
+                        child: Container(
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(scr.width * .1),
                             ),
@@ -110,7 +160,9 @@ class ProfileScreen extends StatelessWidget {
                                 "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
                               ),
                               fit: BoxFit.cover,
-                            )),
+                            ),
+                          ),
+                        ),
                       ),
                       SizedBox(width: scr.width * .04),
                       Column(
@@ -123,9 +175,9 @@ class ProfileScreen extends StatelessWidget {
                                 child: const Text(
                                   "Muhammed Ameer",
                                   style: TextStyle(
-                                    color: Color.fromARGB(255, 34, 34, 34),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xFF343434),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w800,
                                   ),
                                 ),
                               ),

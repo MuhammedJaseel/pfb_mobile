@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
-import 'package:pfb_mobile/widget/create_timeline.dart';
 
 class ProfileFilesScreen extends StatelessWidget {
   const ProfileFilesScreen({Key? key}) : super(key: key);
@@ -18,41 +17,44 @@ class ProfileFilesScreen extends StatelessWidget {
         elevation: 0,
         title: const Text(
           "Select File",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w800),
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: scr.width * .06),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TimelineCreateTitle("Date"),
-            TimlineTextBox1("Select Date", (v) {}),
-            const TimelineCreateTitle("Title"),
-            TimlineTextBox1("Text here", (v) {}),
-            const TimelineCreateTitle("Description"),
-            TimlineTextBox2("Text here", (v) {}),
-            const TimelineCreateTitle("Add Media"),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                for (var i = 0; i < 5; i++)
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    width: scr.width * .15,
-                    height: scr.width * .15,
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(31, 83, 83, 83),
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
-                    ),
-                    child: const Icon(
-                      Icons.add_rounded,
+            for (var i = 0; i < 6; i++)
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: scr.width * .05,
+                  vertical: 20,
+                ),
+                decoration: const BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 1,
                       color: Colors.black12,
-                      size: 37,
                     ),
                   ),
-              ],
-            )
+                ),
+                child: Row(
+                  children: [
+                    Image.asset("asset/icon_pdf.png", width: 50),
+                    const SizedBox(width: 10),
+                    const Text(
+                      "It is test dummy data for desting.pdf",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Color.fromARGB(150, 0, 0, 0),
+                        fontSize: 13,
+                      ),
+                    )
+                  ],
+                ),
+              ),
           ],
         ),
       ),

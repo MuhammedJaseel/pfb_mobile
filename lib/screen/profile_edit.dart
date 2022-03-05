@@ -147,7 +147,7 @@ class ProfileEditScreen extends StatelessWidget {
                     ProfileEditBtn1(2, () {}),
                   ],
                 ),
-                const SignUpEachTitle("Update your Mother's Name ?"),
+                const SignUpEachTitle("Update your Mother’s Name ?"),
                 SignUpEachTextBox1("Text here", (v) {}),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,

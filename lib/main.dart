@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pfb_mobile/screen/home_home.dart';
 import 'package:pfb_mobile/screen/intro.dart';
 
 void main() => runApp(const MyApp());
@@ -11,7 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Perfect Family Builder',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: "Montserrat",
+      ),
       home: const MyHomePage(),
     );
   }
@@ -27,7 +29,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // return const IntroPage();
-    return const HomeScreen();
+    // return const SignUpScreen();
+    // return const CreateFamilyScreen();
+    return const IntroPage();
+    // return const HomeScreen();
   }
 }

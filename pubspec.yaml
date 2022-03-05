@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_datetime_picker: ^1.5.1
+  google_maps_flutter: ^2.1.2
 
   cupertino_icons: ^1.0.2
 
@@ -21,6 +23,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: asset/fonts/Montserrat-SemiBold.ttf
 
   assets:
     - asset/x8m.png
@@ -54,3 +61,4 @@ flutter:
     - asset/icon_qanda_w.png
     - asset/icon_timeline_w.png
     - asset/icon_profile_w.png
+    - asset/icon_pdf.png

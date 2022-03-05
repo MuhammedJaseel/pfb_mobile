@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                           icon: Image.asset("asset/icon_drower.png", width: 25),
                         ),
                         const Text(
-                          "Perfect Family Builder",
+                          "Fathima Mansil",
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: Color(0xFF2B2B2B),
@@ -135,7 +135,7 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               "Whats new !",
                               style: TextStyle(
-                                color: Color.fromARGB(255, 100, 100, 100),
+                                color: Color.fromARGB(255, 132, 132, 132),
                                 fontSize: 19,
                                 fontWeight: FontWeight.w800,
                               ),

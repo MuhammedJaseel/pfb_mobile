@@ -5,6 +5,8 @@
         android:label="pfb_mobile"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBWaRaPcn9b-17ZMFgY_uciPRrq99QdENc"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

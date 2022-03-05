@@ -111,11 +111,10 @@ class ChatScreen extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: const [
                                         Text(
-                                          "Whats new !",
+                                          "Muhammed Shahul",
                                           style: TextStyle(
-                                            color:
-                                                Color.fromARGB(255, 34, 34, 34),
-                                            fontSize: 16,
+                                            color: Color(0xFF3B3B3B),
+                                            fontSize: 15,
                                             fontWeight: FontWeight.w800,
                                           ),
                                         ),
@@ -123,8 +122,7 @@ class ChatScreen extends StatelessWidget {
                                         Text(
                                           "Whats new !",
                                           style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 141, 141, 141),
+                                            color: Color(0xFF8D8D8D),
                                             fontSize: 12,
                                           ),
                                         ),

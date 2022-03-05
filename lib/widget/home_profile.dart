@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
 import 'package:pfb_mobile/screen/create_member.dart';
+import 'package:pfb_mobile/screen/profile_files.dart';
 
 class ProfileAbout extends StatelessWidget {
   const ProfileAbout({Key? key}) : super(key: key);
@@ -125,7 +126,11 @@ class ProfileDocuments extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: (() {}),
+          onTap: (() => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ProfileFilesScreen()),
+              )),
           child: Container(
             margin: const EdgeInsets.all(22),
             width: 135,
@@ -161,20 +166,21 @@ class ProfileDocuments extends StatelessWidget {
 }
 
 class ProfileFramedPhoto extends StatelessWidget {
-  final String t;
+  final String type;
   final double s;
   final double x, y;
-  const ProfileFramedPhoto(this.t, this.s, this.x, this.y, {Key? key})
+  const ProfileFramedPhoto(this.type, this.s, this.x, this.y, {Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
+    String t = type[0];
     double fW = scr.width;
     double fH = scr.width;
     double dW = scr.width * s;
     double h = (t == '8' ? dW : (t == "6" ? dW : (t == '5' ? (dW * .96) : dW)));
-    double w = (t == '8' ? dW : (t == "6" ? (dW * .91) : (t == '5' ? dW : dW)));
+    double w = (t == '8' ? dW : (t == "6" ? (dW * .9) : (t == '5' ? dW : dW)));
     return Positioned(
       top: fH * y - dW / 2,
       left: fW * x - dW / 2,
@@ -189,6 +195,7 @@ class ProfileFramedPhoto extends StatelessWidget {
         ),
         child: Container(
           decoration: const BoxDecoration(
+            color: Colors.black12,
             image: DecorationImage(
               image: NetworkImage(
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/330px-Bill_Gates_2017_%28cropped%29.jpg",
@@ -196,10 +203,7 @@ class ProfileFramedPhoto extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: Image.asset(
-            "asset/x" + t + ".png",
-            fit: BoxFit.cover,
-          ),
+          child: Image.asset("asset/x" + type + ".png", fit: BoxFit.cover),
         ),
       ),
     );
@@ -209,7 +213,11 @@ class ProfileFramedPhoto extends StatelessWidget {
 class ProfileFrameLine extends StatelessWidget {
   final double angle;
   final double size;
-  const ProfileFrameLine(this.angle, this.size, {Key? key}) : super(key: key);
+  const ProfileFrameLine(
+    this.angle,
+    this.size, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -217,6 +225,32 @@ class ProfileFrameLine extends StatelessWidget {
     return Positioned(
       top: scr.width * .5,
       left: scr.width * .5,
+      right: scr.width * size,
+      child: Transform(
+        transform: Matrix4.skewY(0)..rotateZ(angle * (22 / 7)),
+        child: Container(
+          height: 1,
+          color: const Color(0xFFBFBFBF),
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileFrameLine1 extends StatelessWidget {
+  final double angle;
+  final double size;
+  final double x;
+  final double y;
+  const ProfileFrameLine1(this.angle, this.size, this.x, this.y, {Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size scr = getScr(context);
+    return Positioned(
+      top: scr.width * y,
+      left: scr.width * x,
       right: scr.width * size,
       child: Transform(
         transform: Matrix4.skewY(0)..rotateZ(angle * (22 / 7)),

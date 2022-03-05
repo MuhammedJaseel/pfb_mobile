@@ -5,8 +5,8 @@ import 'package:pfb_mobile/widget/singup.dart';
 
 String heritage = "Father";
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
   setheritage(v) {
     heritage = v == 0 ? "Father" : "Mother";
   }
@@ -47,11 +47,19 @@ class SignUpPage extends StatelessWidget {
                 SignUpEachTextBox1('Enter name', (v) {}),
                 SignUpFamillySelecter(setheritage),
                 const SignUpEachTitle("Mobile Number"),
-                SignUpEachTextBox1('Enter number', (v) {}),
+                SignUpEachTextBox1(
+                  'Enter number',
+                  (v) {},
+                  keyboard: TextInputType.phone,
+                ),
                 const SignUpEachTitle("Email"),
-                SignUpEachTextBox1('Enter emailid', (v) {}),
+                SignUpEachTextBox1(
+                  'Enter emailid',
+                  (v) {},
+                  keyboard: TextInputType.emailAddress,
+                ),
                 const SignUpEachTitle("Location"),
-                SignUpEachTextBox1('Kozikode', (v) {}),
+                SignUpSetLocation('Kozikode', (v) {}),
                 SizedBox(height: scr.height * .1),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

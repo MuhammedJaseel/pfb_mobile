@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
+import 'package:pfb_mobile/screen/map_location.dart';
 
 class SignUpEachTitle extends StatelessWidget {
   final String title;
@@ -131,6 +132,55 @@ class _SignUpFamillySelecterState extends State<SignUpFamillySelecter> {
               ),
             ),
         ],
+      ),
+    );
+  }
+}
+
+class SignUpSetLocation extends StatefulWidget {
+  final String hint;
+  final Function fun;
+
+  const SignUpSetLocation(
+    this.hint,
+    this.fun, {
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<SignUpSetLocation> createState() => _SignUpSetLocationState();
+}
+
+class _SignUpSetLocationState extends State<SignUpSetLocation> {
+  String? selected;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (() => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const MapLocationSelecterScreen(),
+            ),
+          )),
+      child: Container(
+        height: 38,
+        alignment: Alignment.bottomLeft,
+        padding: const EdgeInsets.only(bottom: 2),
+        decoration: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: Colors.black26,
+            ),
+          ),
+        ),
+        child: Text(
+          selected ?? widget.hint,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 155, 155, 155),
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
       ),
     );
   }

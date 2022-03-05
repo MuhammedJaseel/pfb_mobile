@@ -211,7 +211,7 @@ class _CreateFamily2BodyState extends State<CreateFamily2Body> {
                 children: [
                   SizedBox(
                     width: scr.width * .32,
-                    child: SignUpEachTextBox1('Death Date', (v) {}),
+                    child: CreateDatePicker1('Death Date', (v) {}),
                   ),
                 ],
               ),

@@ -28,7 +28,7 @@ class QandAScreen extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: Color(0xFF2B2B2B),
-                          fontSize: 22,
+                          fontSize: 20,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
@@ -70,8 +70,8 @@ class QandAScreen extends StatelessWidget {
                           const Text(
                             "Muhammed Ameer",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 34, 34, 34),
-                              fontSize: 22,
+                              color: Color(0xFF343434),
+                              fontSize: 20,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -232,7 +232,7 @@ class _QandABodyState extends State<QandABody> {
                   "Lorem ipsum dolor sit amet, condectetuer addipiscing elit, sed diam nonummy ?",
                   style: TextStyle(
                     color: Color.fromARGB(255, 93, 93, 93),
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

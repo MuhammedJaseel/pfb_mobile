@@ -12,6 +12,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   String? error;
   TextEditingController phoneC = TextEditingController();
+  List contryCodes = ['+91', '+97', '+099'];
+  String selectedContry = '+91';
 
   @override
   Widget build(BuildContext context) {
@@ -47,29 +49,66 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontSize: 22,
                         fontWeight: FontWeight.w500),
                   ),
-                  Container(
-                    constraints: const BoxConstraints(maxWidth: 300),
-                    width: scr.width * .8,
-                    height: 50,
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    margin: const EdgeInsets.all(8),
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                      color: Color(0xFFEFEFEF),
-                    ),
-                    child: TextField(
-                      controller: phoneC,
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Enter mobile number',
-                        hintStyle: TextStyle(
-                          color: Color.fromARGB(255, 155, 155, 155),
-                          fontSize: 16,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        constraints: const BoxConstraints(maxWidth: 300),
+                        width: 76,
+                        height: 50,
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 8,
+                          horizontal: 3,
+                        ),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(6)),
+                          color: Color(0xFFEFEFEF),
+                        ),
+                        child: DropdownButton(
+                          value: selectedContry,
+                          underline: const SizedBox(),
+                          style: const TextStyle(color: Color(0xFF1E1E1E)),
+                          items: contryCodes
+                              .map<DropdownMenuItem<String>>((value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String? v) {
+                            setState(() => selectedContry = v!);
+                          },
                         ),
                       ),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 17),
-                    ),
+                      Container(
+                        constraints: const BoxConstraints(maxWidth: 300),
+                        width: scr.width * .85 - 76,
+                        height: 50,
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 8,
+                          horizontal: 3,
+                        ),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(6)),
+                          color: Color(0xFFEFEFEF),
+                        ),
+                        child: TextField(
+                          controller: phoneC,
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Enter mobile number',
+                            hintStyle: TextStyle(
+                              color: Color.fromARGB(255, 155, 155, 155),
+                              fontSize: 16,
+                            ),
+                          ),
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontSize: 17),
+                        ),
+                      ),
+                    ],
                   ),
                   Container(
                     height: 20,
