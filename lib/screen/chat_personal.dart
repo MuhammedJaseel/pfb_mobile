@@ -119,7 +119,7 @@ class _ChatPersonalScreenState extends State<ChatPersonalScreen> {
                                     Radius.circular(30),
                                   ),
                                   child: Image.network(
-                                    "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                                    "https://img.etimg.com/thumb/msid-69381991,width-650,imgsize-594328,,resizemode-4,quality-100/hacker-1.jpg",
                                     fit: BoxFit.cover,
                                     width: 42,
                                     height: 42,
@@ -166,7 +166,7 @@ class _ChatPersonalScreenState extends State<ChatPersonalScreen> {
                                             msgs[i]['data'][j]['msg']
                                                 .toString(),
                                             style: const TextStyle(
-                                              fontSize: 16,
+                                              fontSize: 15,
                                               color: Color(0xAB000000),
                                               fontWeight: FontWeight.w600,
                                             ),

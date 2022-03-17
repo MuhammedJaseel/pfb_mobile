@@ -58,7 +58,7 @@ class _IntroPageState extends State<IntroPage> {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Color.fromARGB(206, 37, 37, 37),
-                    fontSize: 21,
+                    fontSize: 20,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -69,7 +69,7 @@ class _IntroPageState extends State<IntroPage> {
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       color: Color.fromARGB(255, 128, 128, 128),
-                      fontSize: 15,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

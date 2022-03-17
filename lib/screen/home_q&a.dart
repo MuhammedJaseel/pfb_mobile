@@ -58,7 +58,7 @@ class QandAScreen extends StatelessWidget {
                           borderRadius: BorderRadius.all(
                               Radius.circular(scr.width * .28)),
                           child: Image.network(
-                            "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                            "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -71,7 +71,7 @@ class QandAScreen extends StatelessWidget {
                             "Muhammed Ameer",
                             style: TextStyle(
                               color: Color(0xFF343434),
-                              fontSize: 20,
+                              fontSize: 19,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -82,7 +82,7 @@ class QandAScreen extends StatelessWidget {
                                 "Age : 31",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 135, 135, 135),
-                                  fontSize: 15,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
@@ -104,9 +104,8 @@ class QandAScreen extends StatelessWidget {
                                       const Text(
                                         "2300",
                                         style: TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 255, 255, 255),
-                                          fontSize: 13,
+                                          color: Color(0xFFFFFFFF),
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -178,9 +177,9 @@ class _QandABodyState extends State<QandABody> {
                       tabs[i],
                       style: TextStyle(
                         color: i == tab
-                            ? const Color.fromARGB(255, 255, 255, 255)
-                            : const Color.fromARGB(126, 64, 64, 64),
-                        fontSize: 14,
+                            ? const Color(0xFFFFFFFF)
+                            : const Color(0x7D404040),
+                        fontSize: 13,
                         fontWeight:
                             i == tab ? FontWeight.w700 : FontWeight.w500,
                       ),
@@ -204,7 +203,7 @@ class _QandABodyState extends State<QandABody> {
           child: Row(
             children: [
               Container(
-                height: 13,
+                height: 12,
                 width: scr.width * .6,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 252, 183, 34),
@@ -232,7 +231,7 @@ class _QandABodyState extends State<QandABody> {
                   "Lorem ipsum dolor sit amet, condectetuer addipiscing elit, sed diam nonummy ?",
                   style: TextStyle(
                     color: Color.fromARGB(255, 93, 93, 93),
-                    fontSize: 16,
+                    fontSize: 14.5,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -252,7 +251,7 @@ class _QandABodyState extends State<QandABody> {
                           "Skip",
                           style: TextStyle(
                             color: Color.fromARGB(255, 165, 165, 165),
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                       ),
@@ -273,7 +272,7 @@ class _QandABodyState extends State<QandABody> {
                           "Submit",
                           style: TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255),
-                              fontSize: 15,
+                              fontSize: 14,
                               fontWeight: FontWeight.w600),
                         ),
                       ),

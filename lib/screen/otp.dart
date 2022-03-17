@@ -64,7 +64,7 @@ class _OtpPageState extends State<OtpPage> {
                     "Verification Code",
                     style: TextStyle(
                         color: Color(0xFF2B2B2B),
-                        fontSize: 34,
+                        fontSize: 28,
                         fontWeight: FontWeight.w800),
                   ),
                   SizedBox(height: scr.height * .04),
@@ -75,7 +75,7 @@ class _OtpPageState extends State<OtpPage> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Color(0xFFA9A9A9),
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                   ),
@@ -87,7 +87,7 @@ class _OtpPageState extends State<OtpPage> {
                         "+91 9544013463",
                         style: TextStyle(
                             color: Color(0xFF4C4C4C),
-                            fontSize: 21,
+                            fontSize: 20,
                             fontWeight: FontWeight.w800),
                       ),
                       SizedBox(width: 6),
@@ -103,7 +103,7 @@ class _OtpPageState extends State<OtpPage> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color(0xFFA9A9A9),
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w400),
                   ),
                   Row(
@@ -133,7 +133,7 @@ class _OtpPageState extends State<OtpPage> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xFFA9A9A9),
-                            fontSize: 14,
+                            fontSize: 13,
                             fontWeight: FontWeight.w600),
                       ),
                       InkWell(
@@ -143,7 +143,7 @@ class _OtpPageState extends State<OtpPage> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Color(0xFF3FB3E4),
-                              fontSize: 14,
+                              fontSize: 13,
                               fontWeight: FontWeight.w600),
                         ),
                       )
@@ -180,7 +180,7 @@ class _OtpPageState extends State<OtpPage> {
                             "Login",
                             style: TextStyle(
                                 color: Color(0xFFFFFFFF),
-                                fontSize: 20,
+                                fontSize: 19,
                                 fontWeight: FontWeight.bold),
                           ),
                           Icon(

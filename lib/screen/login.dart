@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 "Login",
                 style: TextStyle(
                     color: Color(0xFF2B2B2B),
-                    fontSize: 45,
+                    fontSize: 42,
                     fontWeight: FontWeight.bold),
               ),
               Column(
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     "Mobile Number",
                     style: TextStyle(
                         color: Color(0xFF4C4C4C),
-                        fontSize: 22,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500),
                   ),
                   Row(
@@ -101,11 +101,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             hintText: 'Enter mobile number',
                             hintStyle: TextStyle(
                               color: Color.fromARGB(255, 155, 155, 155),
-                              fontSize: 16,
+                              fontSize: 14,
                             ),
                           ),
                           textAlign: TextAlign.center,
-                          style: const TextStyle(fontSize: 17),
+                          style: const TextStyle(fontSize: 15),
                         ),
                       ),
                     ],
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       error ?? '',
                       style: const TextStyle(
                           color: Color.fromARGB(235, 224, 26, 26),
-                          fontSize: 13,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400),
                     ),
                   ),
@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color(0xFFA9A9A9),
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w400),
                   ),
                 ],
@@ -149,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Request OTP",
                         style: TextStyle(
                             color: Color(0xFFFFFFFF),
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
                       Icon(

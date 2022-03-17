@@ -30,7 +30,7 @@ class _HomeEachStreamState extends State<HomeEachStream> {
                   Radius.circular(30),
                 ),
                 child: Image.network(
-                  "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                  "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
                   fit: BoxFit.cover,
                 ),
               ),
@@ -44,7 +44,7 @@ class _HomeEachStreamState extends State<HomeEachStream> {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: Color.fromARGB(228, 43, 43, 43),
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
@@ -53,7 +53,7 @@ class _HomeEachStreamState extends State<HomeEachStream> {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: Color.fromARGB(157, 43, 43, 43),
-                    fontSize: 12,
+                    fontSize: 11,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -63,7 +63,7 @@ class _HomeEachStreamState extends State<HomeEachStream> {
         ),
         const SizedBox(height: 12),
         Image.network(
-          "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+          "https://images.ctfassets.net/az3stxsro5h5/2u5p65Vymd09xoL9k59uX4/f8964e5113bb7fc4452ab4d45428d843/octw4-XTipsforChoosingthePerfectInstagramProfilePicture-feature?w=1000&h=667&fl=progressive&q=50&fm=jpg",
           fit: BoxFit.cover,
         ),
         Container(
@@ -72,7 +72,7 @@ class _HomeEachStreamState extends State<HomeEachStream> {
             "Scientific information visualization Desembre 30, 2012 Permutations of variables and axes I’ve been wondering if there could be a system to codify any kind of graphic and the result could be some thing like these icons that show the kind of coordinates of each axe and the nature of the variable that represents. All the permutations up to four variables can be found in chapter.",
             style: TextStyle(
               color: Color.fromARGB(157, 43, 43, 43),
-              fontSize: 12,
+              fontSize: 11,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -93,7 +93,7 @@ class _HomeEachStreamState extends State<HomeEachStream> {
                 "24 Comments",
                 style: TextStyle(
                   color: Color.fromARGB(255, 19, 166, 202),
-                  fontSize: 13,
+                  fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -127,7 +127,7 @@ class _HomeEachStreamState extends State<HomeEachStream> {
                         Radius.circular(30),
                       ),
                       child: Image.network(
-                        "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                        "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
                         fit: BoxFit.cover,
                       ),
                     ),

@@ -15,7 +15,7 @@ class SignUpEachTitle extends StatelessWidget {
         title,
         style: const TextStyle(
           color: Color.fromARGB(211, 43, 43, 43),
-          fontSize: 19,
+          fontSize: 16,
           fontWeight: FontWeight.w800,
         ),
       ),
@@ -59,8 +59,8 @@ class SignUpEachTextBox1 extends StatelessWidget {
         ),
         style: const TextStyle(
           color: Color.fromARGB(210, 61, 61, 61),
-          fontSize: 18.5,
-          fontWeight: FontWeight.w800,
+          fontSize: 15,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
@@ -118,7 +118,7 @@ class _SignUpFamillySelecterState extends State<SignUpFamillySelecter> {
                     ),
                   ),
                   Text(
-                    i == 0 ? "Father Hertage" : "Mother Hertage",
+                    i == 0 ? "Father Heritage" : "Mother Heritage",
                     style: TextStyle(
                       color: selected == i
                           ? const Color.fromARGB(210, 97, 97, 97)

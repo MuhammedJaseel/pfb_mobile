@@ -87,7 +87,7 @@ class EachBtn extends StatelessWidget {
                 text,
                 style: const TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
-                  fontSize: 13.5,
+                  fontSize: 13,
                   fontWeight: FontWeight.w800,
                 ),
               ),

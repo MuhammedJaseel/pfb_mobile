@@ -10,10 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Perfect Family Builder',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: "Montserrat",
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: "Montserrat"),
       home: const MyHomePage(),
     );
   }
@@ -31,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // return const SignUpScreen();
     // return const CreateFamilyScreen();
-    return const IntroPage();
     // return const HomeScreen();
+    return const IntroPage();
   }
 }

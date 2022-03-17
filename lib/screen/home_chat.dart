@@ -73,10 +73,10 @@ class ChatScreen extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Container(
-                                    width: 7,
+                                    width: 5,
                                     decoration: BoxDecoration(
                                       color: (i % 2 == 1)
-                                          ? Colors.blue
+                                          ? const Color(0xFF1773BE)
                                           : Colors.white,
                                       borderRadius: const BorderRadius.only(
                                         bottomRight: Radius.circular(7),
@@ -97,7 +97,7 @@ class ChatScreen extends StatelessWidget {
                                         Radius.circular(30),
                                       ),
                                       child: Image.network(
-                                        "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                                        "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -114,7 +114,7 @@ class ChatScreen extends StatelessWidget {
                                           "Muhammed Shahul",
                                           style: TextStyle(
                                             color: Color(0xFF3B3B3B),
-                                            fontSize: 15,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.w800,
                                           ),
                                         ),
@@ -123,7 +123,7 @@ class ChatScreen extends StatelessWidget {
                                           "Whats new !",
                                           style: TextStyle(
                                             color: Color(0xFF8D8D8D),
-                                            fontSize: 12,
+                                            fontSize: 11,
                                           ),
                                         ),
                                       ],
@@ -139,7 +139,7 @@ class ChatScreen extends StatelessWidget {
                                         style: TextStyle(
                                           color: Color.fromARGB(
                                               255, 141, 141, 141),
-                                          fontSize: 13,
+                                          fontSize: 12,
                                         ),
                                       ),
                                       SizedBox(height: 18),
@@ -148,7 +148,7 @@ class ChatScreen extends StatelessWidget {
                                         style: TextStyle(
                                           color: Color.fromARGB(
                                               255, 141, 141, 141),
-                                          fontSize: 12,
+                                          fontSize: 11,
                                         ),
                                       ),
                                     ],

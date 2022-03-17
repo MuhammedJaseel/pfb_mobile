@@ -225,7 +225,7 @@ class TimeLineEach extends StatelessWidget {
                 ),
                 image: const DecorationImage(
                   image: NetworkImage(
-                    "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                    "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
                   ),
                   fit: BoxFit.cover,
                 ),

@@ -60,7 +60,7 @@ class CreateFamilyScreen3 extends StatelessWidget {
                             "Muhammed Ammer",
                             style: TextStyle(
                               color: Color.fromARGB(255, 24, 24, 24),
-                              fontSize: 21.5,
+                              fontSize: 21,
                               fontWeight: FontWeight.w800,
                             ),
                           ),
@@ -69,8 +69,8 @@ class CreateFamilyScreen3 extends StatelessWidget {
                             "Vadakan Veettil",
                             style: TextStyle(
                               color: Color.fromARGB(255, 24, 24, 24),
-                              fontSize: 21,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                           SizedBox(height: 3),

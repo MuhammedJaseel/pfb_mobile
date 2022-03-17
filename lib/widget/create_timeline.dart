@@ -25,10 +25,7 @@ class TimlineTextBox1 extends StatelessWidget {
         onChanged: (v) => fun(v),
         keyboardType: keyboard,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: scr.width * .05,
-            // vertical: 5,
-          ),
+          contentPadding: EdgeInsets.symmetric(horizontal: scr.width * .05),
           border: InputBorder.none,
           hintText: hint,
           hintStyle: const TextStyle(
@@ -39,8 +36,8 @@ class TimlineTextBox1 extends StatelessWidget {
         ),
         style: const TextStyle(
           color: Color.fromARGB(210, 99, 99, 99),
-          fontSize: 16,
-          fontWeight: FontWeight.w800,
+          fontSize: 14.5,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
@@ -108,7 +105,7 @@ class TimelineCreateTitle extends StatelessWidget {
         title,
         style: const TextStyle(
           color: Color.fromARGB(211, 43, 43, 43),
-          fontSize: 18,
+          fontSize: 16,
           fontWeight: FontWeight.w800,
         ),
       ),

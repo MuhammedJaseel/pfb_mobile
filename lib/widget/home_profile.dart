@@ -29,7 +29,7 @@ class ProfileAbout extends StatelessWidget {
                   details[i]['title'],
                   style: const TextStyle(
                     color: Colors.black45,
-                    fontSize: 14.5,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -93,19 +93,19 @@ class ProfileGallery extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image.network(
-              "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+              "https://img.etimg.com/thumb/msid-69381991,width-650,imgsize-594328,,resizemode-4,quality-100/hacker-1.jpg",
               width: scr.width * .3,
               height: scr.width * .3,
               fit: BoxFit.cover,
             ),
             Image.network(
-              "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+              "https://img.etimg.com/thumb/msid-69381991,width-650,imgsize-594328,,resizemode-4,quality-100/hacker-1.jpg",
               width: scr.width * .3,
               height: scr.width * .3,
               fit: BoxFit.cover,
             ),
             Image.network(
-              "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+              "https://img.etimg.com/thumb/msid-69381991,width-650,imgsize-594328,,resizemode-4,quality-100/hacker-1.jpg",
               width: scr.width * .3,
               height: scr.width * .3,
               fit: BoxFit.cover,

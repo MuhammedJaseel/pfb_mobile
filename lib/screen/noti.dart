@@ -23,7 +23,7 @@ class NotiScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.network(
-                  "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                  "https://img.etimg.com/thumb/msid-69381991,width-650,imgsize-594328,,resizemode-4,quality-100/hacker-1.jpg",
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(

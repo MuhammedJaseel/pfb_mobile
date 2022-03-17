@@ -43,8 +43,8 @@ class HomeEachStory extends StatelessWidget {
               "Muhammed Jaseel",
               style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: 12,
-                fontWeight: FontWeight.w800,
+                fontSize: 11,
+                fontWeight: FontWeight.w700,
               ),
             ),
             Container(

@@ -76,7 +76,7 @@ class _CreateMemberScreenState extends State<CreateMemberScreen> {
               "Add Family Member",
               style: TextStyle(
                 color: Color.fromARGB(211, 43, 43, 43),
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: FontWeight.w800,
               ),
             ),
@@ -85,7 +85,7 @@ class _CreateMemberScreenState extends State<CreateMemberScreen> {
               "Select",
               style: TextStyle(
                 color: Color.fromARGB(211, 43, 43, 43),
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -224,7 +224,7 @@ class _CreateMemberScreenState extends State<CreateMemberScreen> {
                 "Add",
                 style: TextStyle(
                   color: Color(0xFFFFFFFF),
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),

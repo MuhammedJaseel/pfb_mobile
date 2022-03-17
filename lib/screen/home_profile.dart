@@ -113,7 +113,8 @@ class ProfileScreen extends StatelessWidget {
                               onTap: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const FamilyTreeScreen(),
+                                  builder: (context) =>
+                                      const FamilyTreeScreen(),
                                 ),
                               ),
                               child: Container(
@@ -123,7 +124,7 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                   image: const DecorationImage(
                                     image: NetworkImage(
-                                      "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                                      "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
                                     ),
                                     fit: BoxFit.cover,
                                   ),
@@ -157,7 +158,7 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             image: const DecorationImage(
                               image: NetworkImage(
-                                "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                                "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
                               ),
                               fit: BoxFit.cover,
                             ),
@@ -176,7 +177,7 @@ class ProfileScreen extends StatelessWidget {
                                   "Muhammed Ameer",
                                   style: TextStyle(
                                     color: Color(0xFF343434),
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
@@ -184,7 +185,7 @@ class ProfileScreen extends StatelessWidget {
                               const Icon(
                                 Icons.male,
                                 color: Color(0xFFB1EEFF),
-                                size: 35,
+                                size: 33,
                               ),
                             ],
                           ),
@@ -194,7 +195,7 @@ class ProfileScreen extends StatelessWidget {
                                 "Age : 31",
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 135, 135, 135),
-                                  fontSize: 15,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
@@ -211,20 +212,21 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                 ),
                                 child: Row(
-                                  children: [
-                                    const Text(
+                                  children: const [
+                                    SizedBox(width: 3),
+                                    Text(
                                       "2300",
                                       style: TextStyle(
                                         color:
                                             Color.fromARGB(255, 255, 255, 255),
-                                        fontSize: 13,
+                                        fontSize: 11,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                    SizedBox(width: scr.width * .02),
-                                    const Icon(
+                                    SizedBox(width: 4),
+                                    Icon(
                                       Icons.star,
-                                      size: 14,
+                                      size: 13,
                                       color: Colors.white,
                                     )
                                   ],
@@ -320,7 +322,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                         color: i == tab
                             ? const Color.fromARGB(255, 255, 255, 255)
                             : const Color.fromARGB(126, 64, 64, 64),
-                        fontSize: 14,
+                        fontSize: 13,
                         fontWeight:
                             i == tab ? FontWeight.w700 : FontWeight.w500,
                       ),

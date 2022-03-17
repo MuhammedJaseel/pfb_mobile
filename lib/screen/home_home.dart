@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: Image.asset("asset/icon_search.png", width: 25),
+                          icon: Image.asset("asset/icon_search.png", width: 22),
                         ),
                         IconButton(
                           onPressed: () => Navigator.push(
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                               builder: (context) => const NotiScreen(),
                             ),
                           ),
-                          icon: Image.asset("asset/icon_bell.png", width: 25),
+                          icon: Image.asset("asset/icon_bell.png", width: 22),
                         ),
                       ],
                     ),
@@ -126,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(30)),
                                 child: Image.network(
-                                  "https://images.indianexpress.com/2016/10/family_759_pixabay.jpg",
+                                  "https://1.bp.blogspot.com/-Muc21xaQjYg/XluhYO6f6vI/AAAAAAAAPJw/T51WnNCctz4Vxn_9REzJuftkznfuRGKUgCLcBGAsYHQ/s1600/whatsapp%2Bprofile%2Bpic%2B%25281%2529.jpg",
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -136,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                               "Whats new !",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 132, 132, 132),
-                                fontSize: 19,
+                                fontSize: 17,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
