@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfb_mobile/screen/chat_personal.dart';
 
 class HomeEachStory extends StatelessWidget {
   final Map story;
@@ -69,25 +70,38 @@ class HomeOnlineStutusEach extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 17),
-      height: 54,
-      width: 54,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(27)),
-        image: DecorationImage(
-          image: NetworkImage(member['img']),
-          fit: BoxFit.cover,
-        ),
+    getStatusColor(s) {
+      if (s == "Unknown") return Colors.black87;
+      if (s == "Online") return Colors.green;
+      if (s == "Offline") Colors.red;
+      return Colors.orange;
+    }
+
+    return InkWell(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ChatPersonalScreen()),
       ),
-      alignment: Alignment.bottomRight,
       child: Container(
-        height: 14,
-        width: 14,
+        margin: const EdgeInsets.only(right: 17),
+        height: 54,
+        width: 54,
         decoration: BoxDecoration(
-          border: Border.all(width: 1, color: Colors.white),
-          color: member['status'] == 'Online' ? Colors.green : Colors.orange,
-          borderRadius: const BorderRadius.all(Radius.circular(7)),
+          borderRadius: const BorderRadius.all(Radius.circular(27)),
+          image: DecorationImage(
+            image: NetworkImage(member['img']),
+            fit: BoxFit.cover,
+          ),
+        ),
+        alignment: Alignment.bottomRight,
+        child: Container(
+          height: 14,
+          width: 14,
+          decoration: BoxDecoration(
+            border: Border.all(width: 1, color: Colors.white),
+            color: getStatusColor(member['status']),
+            borderRadius: const BorderRadius.all(Radius.circular(7)),
+          ),
         ),
       ),
     );

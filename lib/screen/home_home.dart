@@ -6,7 +6,6 @@ import 'package:pfb_mobile/widget/home.dart';
 import 'package:pfb_mobile/widget/home_bottembar.dart';
 import 'package:pfb_mobile/widget/home_stream.dart';
 import 'package:pfb_mobile/widget/loading.dart';
-import 'package:pfb_mobile/widget/singup.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size scr = getScr(context);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SizedBox(
         width: scr.width,
         height: scr.height,
@@ -126,7 +126,35 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 20),
-                        SignUpEachTextBox1("Type message..", (v) {}),
+                        SizedBox(
+                          child: TextField(
+                            onChanged: (v) {},
+                            textCapitalization: TextCapitalization.sentences,
+                            keyboardType: TextInputType.multiline,
+                            maxLines: null,
+                            decoration: const InputDecoration(
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black26),
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.cyan),
+                              ),
+                              contentPadding: EdgeInsets.all(0),
+                              border: InputBorder.none,
+                              hintText: "Type message..",
+                              hintStyle: TextStyle(
+                                color: Color.fromARGB(255, 155, 155, 155),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            style: const TextStyle(
+                              color: Color.fromARGB(210, 61, 61, 61),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
                         const SizedBox(height: 20),
                         Row(
                           children: [
@@ -151,12 +179,12 @@ class HomeScreen extends StatelessWidget {
                                       Icons.format_strikethrough, () {}),
                                   HometexteditBtn(Icons.photo, () {}),
                                   HometexteditBtn(Icons.insert_link, () {}),
-                                  HometexteditBtn(Icons.format_italic, () {}),
                                 ],
                               ),
                             ),
                             Row(
                               children: [
+                                HometexteditBtn(Icons.photo_camera, () {}),
                                 HometexteditBtn(Icons.attach_file, () {}),
                                 HometexteditBtn(Icons.location_on, () {}),
                               ],
@@ -247,7 +275,8 @@ class _HomeOnlineMembersState extends State<HomeOnlineMembers> {
         scrollDirection: Axis.horizontal,
         children: [
           const SizedBox(width: 17),
-          for (var i = 0; i < onlines.length; i++)  HomeOnlineStutusEach(onlines[i]),
+          for (var i = 0; i < onlines.length; i++)
+            HomeOnlineStutusEach(onlines[i]),
           if (loading)
             for (var i = 0; i < 10; i++)
               Container(
