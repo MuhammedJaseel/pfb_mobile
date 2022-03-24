@@ -4,8 +4,16 @@ import 'package:pfb_mobile/module/screen.dart';
 import 'package:pfb_mobile/widget/create_family.dart';
 import 'package:pfb_mobile/widget/singup.dart';
 
-class CreateFamilyScreen extends StatelessWidget {
+class CreateFamilyScreen extends StatefulWidget {
   const CreateFamilyScreen({Key? key}) : super(key: key);
+
+  @override
+  State<CreateFamilyScreen> createState() => _CreateFamilyScreenState();
+}
+
+class _CreateFamilyScreenState extends State<CreateFamilyScreen> {
+  bool fatherAlive = true;
+  bool motherAlive = true;
 
   @override
   Widget build(BuildContext context) {
@@ -96,10 +104,39 @@ class CreateFamilyScreen extends StatelessWidget {
                             color: const Color.fromARGB(31, 117, 117, 117),
                           ),
                           alignment: Alignment.center,
-                          child: Icon(
-                            Icons.person_outline,
-                            color: Colors.black26,
-                            size: scr.width * .22,
+                          child: Stack(
+                            overflow: Overflow.visible,
+                            children: [
+                              Icon(
+                                Icons.person_outline,
+                                color: Colors.black26,
+                                size: scr.width * .22,
+                              ),
+                              Positioned(
+                                top: -10,
+                                right: -10,
+                                child: Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: const BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(15)),
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          spreadRadius: 3,
+                                          color: Colors.black12,
+                                          blurRadius: 3,
+                                        )
+                                      ]),
+                                  child: const Icon(
+                                    Icons.add_a_photo,
+                                    color: Colors.black45,
+                                    size: 18,
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
                         ),
                       ),
@@ -124,16 +161,28 @@ class CreateFamilyScreen extends StatelessWidget {
                         width: scr.width - 185,
                         child: SignUpEachTextBox1('Father name', (v) {}),
                       ),
-                      CreateFamilyCheckBox("Mark Death", (v) {})
+                      CreateFamilyCheckBox("Mark Death", (v) {
+                        setState(() => fatherAlive = !v);
+                      })
                     ],
                   ),
                   const SizedBox(height: 16),
                   Row(
                     children: [
-                      SizedBox(
-                        width: scr.width * .32,
-                        child: CreateDatePicker1('Death Date', (v) {}),
-                      ),
+                      if (fatherAlive)
+                        SizedBox(
+                          width: scr.width * .32,
+                          child: SignUpEachTextBox1(
+                            '+91 95XXXXXX63',
+                            (v) {},
+                            keyboard: TextInputType.number,
+                          ),
+                        ),
+                      if (!fatherAlive)
+                        SizedBox(
+                          width: scr.width * .32,
+                          child: CreateDatePicker1('Not Alive', (v) {}),
+                        ),
                       const SizedBox(width: 20),
                       Expanded(
                         child: SignUpEachTextBox1('Family name', (v) {}),
@@ -149,16 +198,28 @@ class CreateFamilyScreen extends StatelessWidget {
                         width: scr.width - 185,
                         child: SignUpEachTextBox1('Mother name', (v) {}),
                       ),
-                      CreateFamilyCheckBox("Mark Death", (v) {})
+                      CreateFamilyCheckBox("Mark Death", (v) {
+                        setState(() => motherAlive = !v);
+                      })
                     ],
                   ),
                   const SizedBox(height: 16),
                   Row(
                     children: [
-                      SizedBox(
-                        width: scr.width * .32,
-                        child: CreateDatePicker1('Death Date', (v) {}),
-                      ),
+                      if (motherAlive)
+                        SizedBox(
+                          width: scr.width * .32,
+                          child: SignUpEachTextBox1(
+                            '+91 95XXXXXX63',
+                            (v) {},
+                            keyboard: TextInputType.number,
+                          ),
+                        ),
+                      if (!motherAlive)
+                        SizedBox(
+                          width: scr.width * .32,
+                          child: CreateDatePicker1('Not Alive', (v) {}),
+                        ),
                       const SizedBox(width: 20),
                       Expanded(
                         child: SignUpEachTextBox1('Family name', (v) {}),

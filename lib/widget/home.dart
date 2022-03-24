@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomeEachStory extends StatelessWidget {
-  const HomeEachStory({Key? key}) : super(key: key);
+  final Map story;
+  const HomeEachStory(this.story, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,12 +10,10 @@ class HomeEachStory extends StatelessWidget {
       margin: const EdgeInsets.only(right: 12),
       height: 130,
       width: 105,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
         image: DecorationImage(
-          image: NetworkImage(
-            "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/family-background-design-template-29ab2d09ab60b428d95a9a6391b3c5fb_screen.jpg?ts=1625462116",
-          ),
+          image: NetworkImage(story['img']),
           fit: BoxFit.cover,
         ),
       ),
@@ -39,9 +38,9 @@ class HomeEachStory extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Muhammed Jaseel",
-              style: TextStyle(
+            Text(
+              story['name'],
+              style: const TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 11,
                 fontWeight: FontWeight.w700,
@@ -65,7 +64,8 @@ class HomeEachStory extends StatelessWidget {
 }
 
 class HomeOnlineStutusEach extends StatelessWidget {
-  const HomeOnlineStutusEach({Key? key}) : super(key: key);
+  final Map member;
+  const HomeOnlineStutusEach(this.member, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,12 +73,10 @@ class HomeOnlineStutusEach extends StatelessWidget {
       margin: const EdgeInsets.only(right: 17),
       height: 54,
       width: 54,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(27)),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(27)),
         image: DecorationImage(
-          image: NetworkImage(
-            "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/family-background-design-template-29ab2d09ab60b428d95a9a6391b3c5fb_screen.jpg?ts=1625462116",
-          ),
+          image: NetworkImage(member['img']),
           fit: BoxFit.cover,
         ),
       ),
@@ -88,7 +86,7 @@ class HomeOnlineStutusEach extends StatelessWidget {
         width: 14,
         decoration: BoxDecoration(
           border: Border.all(width: 1, color: Colors.white),
-          color: Colors.green,
+          color: member['status'] == 'Online' ? Colors.green : Colors.orange,
           borderRadius: const BorderRadius.all(Radius.circular(7)),
         ),
       ),
@@ -116,4 +114,3 @@ class HometexteditBtn extends StatelessWidget {
     );
   }
 }
-  

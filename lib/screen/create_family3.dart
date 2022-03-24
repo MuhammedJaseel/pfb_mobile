@@ -20,26 +20,27 @@ class CreateFamilyScreen3 extends StatelessWidget {
             height: 80,
             width: scr.width,
             child: SafeArea(
-                child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.black38,
-                    size: 30,
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Colors.black38,
+                      size: 30,
+                    ),
                   ),
-                ),
-                const Text(
-                  "Create Family",
-                  style: TextStyle(
-                    color: Color(0xFF2B2B2B),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
+                  const Text(
+                    "Create Family",
+                    style: TextStyle(
+                      color: Color(0xFF2B2B2B),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
-                ),
-              ],
-            )),
+                ],
+              ),
+            ),
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: scr.width * .05),
@@ -160,8 +161,8 @@ class _CreateFamily2BodyState extends State<CreateFamily2Body> {
                     var sc = int.parse(daughterCount);
                     members = [];
                     for (var i = 0; i < (bc > sc ? bc : sc); i++) {
-                      if (i < bc) members.add({"type": "s"});
-                      if (i < sc) members.add({"type": "d"});
+                      if (i < bc) members.add({"type": "s", 'alive': true});
+                      if (i < sc) members.add({"type": "d", 'alive': true});
                       setState(() {});
                     }
                   } catch (e) {
@@ -203,17 +204,37 @@ class _CreateFamily2BodyState extends State<CreateFamily2Body> {
                             ' name',
                         (v) {}),
                   ),
-                  CreateFamilyCheckBox("Mark Death", (v) {})
+                  CreateFamilyCheckBox("Mark Death", (v) {
+                    setState(() => members[i]['alive'] = !v);
+                  })
                 ],
               ),
               const SizedBox(height: 16),
               Row(
                 children: [
                   SizedBox(
-                    width: scr.width * .32,
-                    child: CreateDatePicker1('Death Date', (v) {}),
+                    width: scr.width * .42,
+                    child: !members[i]['alive']
+                        ? CreateDatePicker1('Not Alive', (v) {})
+                        : SignUpEachTextBox1(
+                            '+91 95XXXXXX63',
+                            (v) {},
+                            keyboard: TextInputType.number,
+                          ),
                   ),
+                  SizedBox(width: scr.width * .05),
+                  if (members[i]['alive'])
+                    SizedBox(
+                      width: scr.width * .32,
+                      child: SignUpEachTextBox1('Age', (v) {},
+                          keyboard: TextInputType.number),
+                    ),
                 ],
+              ),
+              Container(
+                color: const Color(0x3A9E9E9E),
+                height: 1.5,
+                margin: const EdgeInsets.only(top: 25),
               ),
             ],
           ),

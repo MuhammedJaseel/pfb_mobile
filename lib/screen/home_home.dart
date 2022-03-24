@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pfb_mobile/method/home.dart';
 import 'package:pfb_mobile/module/screen.dart';
 import 'package:pfb_mobile/screen/noti.dart';
 import 'package:pfb_mobile/widget/home.dart';
 import 'package:pfb_mobile/widget/home_bottembar.dart';
 import 'package:pfb_mobile/widget/home_stream.dart';
+import 'package:pfb_mobile/widget/loading.dart';
 import 'package:pfb_mobile/widget/singup.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -67,28 +69,9 @@ class HomeScreen extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.only(top: 15),
                 children: [
-                  SizedBox(
-                    height: 130,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        const SizedBox(width: 12),
-                        for (var i = 0; i < 10; i++) const HomeEachStory(),
-                      ],
-                    ),
-                  ),
+                  const HomeStory(),
                   const SizedBox(height: 20),
-                  SizedBox(
-                    height: 50,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        const SizedBox(width: 17),
-                        for (var i = 0; i < 10; i++)
-                          const HomeOnlineStutusEach()
-                      ],
-                    ),
-                  ),
+                  const HomeOnlineMembers(),
                   const SizedBox(height: 6),
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -190,6 +173,92 @@ class HomeScreen extends StatelessWidget {
             const HomeBottemBar(0),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class HomeStory extends StatefulWidget {
+  const HomeStory({Key? key}) : super(key: key);
+
+  @override
+  State<HomeStory> createState() => _HomeStoryState();
+}
+
+class _HomeStoryState extends State<HomeStory> {
+  List stories = [];
+  bool loading = true;
+
+  @override
+  void initState() {
+    getHomeStory(this);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 130,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          const SizedBox(width: 12),
+          for (var i = 0; i < stories.length; i++) HomeEachStory(stories[i]),
+          if (loading)
+            for (var i = 0; i < 5; i++)
+              Container(
+                margin: const EdgeInsets.only(right: 12),
+                height: 130,
+                width: 105,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(20, 0, 0, 0),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                child: const Loading(viewStatus: false),
+              ),
+        ],
+      ),
+    );
+  }
+}
+
+class HomeOnlineMembers extends StatefulWidget {
+  const HomeOnlineMembers({Key? key}) : super(key: key);
+
+  @override
+  State<HomeOnlineMembers> createState() => _HomeOnlineMembersState();
+}
+
+class _HomeOnlineMembersState extends State<HomeOnlineMembers> {
+  List onlines = [];
+  bool loading = true;
+
+  @override
+  void initState() {
+    getHomeOnlines(this);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          const SizedBox(width: 17),
+          for (var i = 0; i < onlines.length; i++)  HomeOnlineStutusEach(onlines[i]),
+          if (loading)
+            for (var i = 0; i < 10; i++)
+              Container(
+                margin: const EdgeInsets.only(right: 17),
+                height: 54,
+                width: 54,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(27)),
+                ),
+              ),
+        ],
       ),
     );
   }

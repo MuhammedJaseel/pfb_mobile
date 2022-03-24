@@ -62,3 +62,6 @@ flutter:
     - asset/icon_timeline_w.png
     - asset/icon_profile_w.png
     - asset/icon_pdf.png
+
+    - asset/flags/91.jpg
+    - asset/flags/971.jpg

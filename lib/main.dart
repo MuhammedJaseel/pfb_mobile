@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfb_mobile/screen/home_home.dart';
 import 'package:pfb_mobile/screen/intro.dart';
 
 void main() => runApp(const MyApp());
@@ -28,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // return const SignUpScreen();
     // return const CreateFamilyScreen();
-    // return const HomeScreen();
+    return const HomeScreen();
     return const IntroPage();
   }
 }

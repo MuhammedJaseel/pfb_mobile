@@ -12,8 +12,10 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   String? error;
   TextEditingController phoneC = TextEditingController();
-  List contryCodes = ['+91', '+97', '+099'];
-  String selectedContry = '+91';
+  List contryCodes = ['91', '971'];
+  String selectedContry = '91';
+
+  bool loginIsactive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Container(
                         constraints: const BoxConstraints(maxWidth: 300),
-                        width: 76,
+                        width: 96,
                         height: 50,
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         margin: const EdgeInsets.symmetric(
@@ -73,7 +75,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               .map<DropdownMenuItem<String>>((value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: Row(
+                                children: [
+                                  Image.asset("asset/flags/$value.jpg",
+                                      width: 20),
+                                  Text("+" + value),
+                                ],
+                              ),
                             );
                           }).toList(),
                           onChanged: (String? v) {
@@ -95,6 +103,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Color(0xFFEFEFEF),
                         ),
                         child: TextField(
+                          onChanged: ((v) {
+                            if (v.length == 10) {
+                              setState(() => loginIsactive = true);
+                            } else {
+                              setState(() => loginIsactive = false);
+                            }
+                          }),
+                          keyboardType: TextInputType.number,
                           controller: phoneC,
                           decoration: const InputDecoration(
                             border: InputBorder.none,
@@ -138,9 +154,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: scr.width * .8,
                   padding:
                       const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(14)),
-                    color: Color(0xFF117BD3),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(14)),
+                    color:
+                        loginIsactive ? const Color(0xFF117BD3) : Colors.grey,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

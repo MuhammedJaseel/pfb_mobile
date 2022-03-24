@@ -41,6 +41,7 @@ class SignUpEachTextBox1 extends StatelessWidget {
       child: TextField(
         onChanged: (v) => fun(v),
         keyboardType: keyboard,
+        textCapitalization: TextCapitalization.sentences,
         decoration: InputDecoration(
           enabledBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.black26),
@@ -62,6 +63,76 @@ class SignUpEachTextBox1 extends StatelessWidget {
           fontSize: 15,
           fontWeight: FontWeight.w700,
         ),
+      ),
+    );
+  }
+}
+
+class SignUpGenderSelecter extends StatefulWidget {
+  final Function setGender;
+  const SignUpGenderSelecter(this.setGender, {Key? key}) : super(key: key);
+
+  @override
+  _SignUpGenderSelecterState createState() => _SignUpGenderSelecterState();
+}
+
+class _SignUpGenderSelecterState extends State<SignUpGenderSelecter> {
+  int selected = 0;
+  @override
+  Widget build(BuildContext context) {
+    Size scr = getScr(context);
+    return Padding(
+      padding: EdgeInsets.only(top: scr.height * .03),
+      child: Row(
+        children: [
+          for (var i = 0; i < 2; i++)
+            InkWell(
+              onTap: () {
+                widget.setGender(i);
+                setState(() {
+                  selected = i;
+                });
+              },
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 18,
+                    height: 18,
+                    margin: const EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: selected == i ? Colors.blue : Colors.black38,
+                      ),
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
+                    ),
+                    alignment: Alignment.center,
+                    child: Container(
+                      width: 14,
+                      height: 14,
+                      decoration: BoxDecoration(
+                        color: selected == i ? Colors.blue : Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(8)),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    i == 0 ? "Male" : "Female",
+                    style: TextStyle(
+                      color: selected == i
+                          ? const Color.fromARGB(210, 97, 97, 97)
+                          : const Color.fromARGB(210, 167, 167, 167),
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(width: scr.width * .05),
+                ],
+              ),
+            ),
+        ],
       ),
     );
   }

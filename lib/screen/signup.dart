@@ -11,6 +11,10 @@ class SignUpScreen extends StatelessWidget {
     heritage = v == 0 ? "Father" : "Mother";
   }
 
+  setGender(v) {
+    heritage = v == 0 ? "Male" : "Female";
+  }
+
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
@@ -43,6 +47,7 @@ class SignUpScreen extends StatelessWidget {
               children: [
                 const SignUpEachTitle("Name"),
                 SignUpEachTextBox1('Enter name', (v) {}),
+                SignUpGenderSelecter(setGender),
                 const SignUpEachTitle("Family Name"),
                 SignUpEachTextBox1('Enter name', (v) {}),
                 SignUpFamillySelecter(setheritage),
@@ -54,12 +59,12 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 const SignUpEachTitle("Email"),
                 SignUpEachTextBox1(
-                  'Enter emailid',
+                  'Enter Email ID',
                   (v) {},
                   keyboard: TextInputType.emailAddress,
                 ),
-                const SignUpEachTitle("Location"),
-                SignUpSetLocation('Kozikode', (v) {}),
+                // const SignUpEachTitle("Location"),
+                // SignUpSetLocation('Kozikode', (v) {}),
                 SizedBox(height: scr.height * .1),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
