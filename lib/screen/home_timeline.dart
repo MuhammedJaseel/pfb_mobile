@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pfb_mobile/module/screen.dart';
-import 'package:pfb_mobile/screen/create_timeline.dart';
+import 'package:pfb_mobile/screen/timeline_create.dart';
+import 'package:pfb_mobile/screen/timeline_edit.dart';
+import 'package:pfb_mobile/screen/timeline_photos.dart';
 import 'package:pfb_mobile/widget/home_bottembar.dart';
 
 class TimeLineScreen extends StatefulWidget {
@@ -12,6 +14,49 @@ class TimeLineScreen extends StatefulWidget {
 
 class _TimeLineScreenState extends State<TimeLineScreen> {
   bool edit = false;
+
+  List timelines = [
+    {
+      "date": "12 Jul 2020",
+      "title": "House Warming",
+      "desc":
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....",
+      "imgs": [
+        "https://gravityhomes.in/wp-content/uploads/elementor/thumbs/1-about-gravity-pdhgqtthsh0xkpf5sjzl693xrud3n08dtv96bz6ccs.jpg",
+        "https://gravityhomes.in/wp-content/uploads/elementor/thumbs/1-about-gravity-pdhgqtthsh0xkpf5sjzl693xrud3n08dtv96bz6ccs.jpg",
+      ],
+    },
+    {
+      "date": "15 Sep 2020",
+      "title": "New Car",
+      "desc":
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....",
+      "imgs": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/2022_Maruti_Suzuki_Baleno_Alpha_%28India%29_front_view.jpg/200px-2022_Maruti_Suzuki_Baleno_Alpha_%28India%29_front_view.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Suzuki_Ignis_%28third_generation%29_Facelift_IMG_4450.jpg/200px-Suzuki_Ignis_%28third_generation%29_Facelift_IMG_4450.jpg"
+      ],
+    },
+    {
+      "date": "10 Dec 2020",
+      "title": "Aayan Borned",
+      "desc":
+          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat....",
+      "imgs": [
+        "http://images.agoramedia.com/wte3.0/gcms/Soothe-crying-baby-722x406.jpg?width=414"
+      ],
+    },
+    {
+      "date": "10 Dec 2020",
+      "title": "New Shop Opened",
+      "desc": "",
+      "imgs": [
+        "https://ichef.bbci.co.uk/news/976/cpsprodpb/0ED2/production/_118149730_mediaitem118148499.jpg",
+        "https://www.kare-design.com/wp-content/uploads/2015/08/2.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Comercio_en_la_plaza_del_9_de_abril_de_1947%2C_T%C3%A1nger%2C_Marruecos%2C_2015-12-11%2C_DD_78.JPG/1200px-Comercio_en_la_plaza_del_9_de_abril_de_1947%2C_T%C3%A1nger%2C_Marruecos%2C_2015-12-11%2C_DD_78.JPG",
+      ],
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
@@ -51,7 +96,7 @@ class _TimeLineScreenState extends State<TimeLineScreen> {
                       )
                     else
                       InkWell(
-                        onTap: () => setState(() => edit = true),
+                        onTap: () => setState(() => edit = !edit),
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 10,
@@ -64,7 +109,7 @@ class _TimeLineScreenState extends State<TimeLineScreen> {
                             ),
                           ),
                           child: const Text(
-                            "Save",
+                            "Done",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -82,10 +127,10 @@ class _TimeLineScreenState extends State<TimeLineScreen> {
               height: scr.height - 140,
               child: ListView(
                 children: [
-                  for (var i = 0; i < 4; i++)
+                  for (var i = 0; i < timelines.length; i++)
                     Column(
                       children: [
-                        TimeLineEach(i, edit),
+                        TimeLineEach(i, edit, timelines[i]),
                         Container(
                           height: i == 3 ? 80 : 40,
                           width: 2,
@@ -102,7 +147,7 @@ class _TimeLineScreenState extends State<TimeLineScreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  const CreateTimelineScreen(),
+                                  TimelineCreateScreen(timelines),
                             ),
                           );
                         }),
@@ -143,7 +188,9 @@ class _TimeLineScreenState extends State<TimeLineScreen> {
 class TimeLineEach extends StatelessWidget {
   final int i;
   final bool edit;
-  const TimeLineEach(this.i, this.edit, {Key? key}) : super(key: key);
+  final Map timeline;
+  const TimeLineEach(this.i, this.edit, this.timeline, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -163,9 +210,9 @@ class TimeLineEach extends StatelessWidget {
               Radius.circular(10),
             ),
           ),
-          child: const Text(
-            "12 Jul 2020",
-            style: TextStyle(
+          child: Text(
+            timeline['date'] ?? '',
+            style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w700,
               fontSize: 11,
@@ -173,11 +220,11 @@ class TimeLineEach extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
-        const Text(
-          "New Car",
+        Text(
+          timeline['title'] ?? '',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color.fromARGB(255, 35, 35, 35),
             fontWeight: FontWeight.w600,
             fontSize: 11,
@@ -185,7 +232,7 @@ class TimeLineEach extends StatelessWidget {
         ),
         const SizedBox(height: 5),
         Text(
-          "A paragraph is a series of related sentences developing a central idea, called the topic.",
+          timeline['desc'] ?? '',
           maxLines: 3,
           overflow: TextOverflow.ellipsis,
           textAlign: i % 2 == 0 ? TextAlign.start : TextAlign.end,
@@ -203,7 +250,24 @@ class TimeLineEach extends StatelessWidget {
         SizedBox(width: scr.width * .32, child: i % 2 == 1 ? dataBody : null),
         InkWell(
           onTap: (() {
-            if (edit) {}
+            if (edit) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TimelineEditScreen(timeline),
+                ),
+              );
+            } else {
+              if (timeline['imgs'].length > 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        TimelinePhotosScreen(context, timeline['imgs']),
+                  ),
+                );
+              }
+            }
           }),
           child: Container(
             width: scr.width * .2,
@@ -223,12 +287,12 @@ class TimeLineEach extends StatelessWidget {
                 borderRadius: BorderRadius.all(
                   Radius.circular(scr.width * .15),
                 ),
-                image: const DecorationImage(
-                  image: NetworkImage(
-                    "http://bestprofilepix.com/wp-content/uploads/2014/03/sad-and-alone-boys-facebook-profile-pictures.jpg",
-                  ),
-                  fit: BoxFit.cover,
-                ),
+                image: timeline['imgs'].length > 0
+                    ? DecorationImage(
+                        image: NetworkImage(timeline['imgs'][0]),
+                        fit: BoxFit.cover,
+                      )
+                    : null,
               ),
               child: edit
                   ? Container(

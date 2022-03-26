@@ -204,7 +204,7 @@ class _CreateFamily2BodyState extends State<CreateFamily2Body> {
                             ' name',
                         (v) {}),
                   ),
-                  CreateFamilyCheckBox("Mark Death", (v) {
+                  CreateFamilyCheckBox("Not Alive", (v) {
                     setState(() => members[i]['alive'] = !v);
                   })
                 ],
@@ -215,7 +215,7 @@ class _CreateFamily2BodyState extends State<CreateFamily2Body> {
                   SizedBox(
                     width: scr.width * .42,
                     child: !members[i]['alive']
-                        ? CreateDatePicker1('Not Alive', (v) {})
+                        ? CreateDatePicker1('Memory Date', (v) {})
                         : SignUpEachTextBox1(
                             '+91 95XXXXXX63',
                             (v) {},

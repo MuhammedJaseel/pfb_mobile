@@ -5,11 +5,13 @@ class TimlineTextBox1 extends StatelessWidget {
   final String hint;
   final Function fun;
   final TextInputType keyboard;
+  final String? text;
   const TimlineTextBox1(
     this.hint,
     this.fun, {
     Key? key,
     this.keyboard = TextInputType.text,
+    this.text,
   }) : super(key: key);
 
   @override
@@ -23,6 +25,7 @@ class TimlineTextBox1 extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: TextField(
         onChanged: (v) => fun(v),
+        controller: TextEditingController(text: text),
         keyboardType: keyboard,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: scr.width * .05),
@@ -48,11 +51,13 @@ class TimlineTextBox2 extends StatelessWidget {
   final String hint;
   final Function fun;
   final TextInputType keyboard;
+  final String? text;
   const TimlineTextBox2(
     this.hint,
     this.fun, {
     Key? key,
     this.keyboard = TextInputType.text,
+    this.text,
   }) : super(key: key);
 
   @override
@@ -65,6 +70,7 @@ class TimlineTextBox2 extends StatelessWidget {
       ),
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: TextField(
+        controller: TextEditingController(text: text),
         minLines: 4,
         maxLines: 5,
         onChanged: (v) => fun(v),
@@ -84,8 +90,8 @@ class TimlineTextBox2 extends StatelessWidget {
         ),
         style: const TextStyle(
           color: Color.fromARGB(210, 99, 99, 99),
-          fontSize: 16,
-          fontWeight: FontWeight.w800,
+          fontSize: 14.5,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );

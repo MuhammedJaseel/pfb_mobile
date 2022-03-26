@@ -215,7 +215,7 @@ class _CreateFamily2BodyState extends State<CreateFamily2Body> {
                   SizedBox(
                     width: scr.width * .42,
                     child: !members[i]['alive']
-                        ? CreateDatePicker1('Death Date', (v) {})
+                        ? CreateDatePicker1('Memory Date', (v) {})
                         : SignUpEachTextBox1(
                             '+91 95XXXXXX63',
                             (v) {},

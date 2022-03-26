@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pfb_mobile/module/screen.dart';
 import 'package:pfb_mobile/widget/create_timeline.dart';
 
-class CreateTimelineScreen extends StatelessWidget {
-  const CreateTimelineScreen({Key? key}) : super(key: key);
+//ignore: must_be_immutable
+class TimelineCreateScreen extends StatelessWidget {
+  List timelines;
+  TimelineCreateScreen(this.timelines, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size scr = getScr(context);
-
+    Map tempTimeline = {"date": "", "title": "", "desc": "", "imgs": []};
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -24,7 +27,10 @@ class CreateTimelineScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 4),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                // timelines.add(tempTimeline);
+                Navigator.pop(context);
+              },
               child: const Text(
                 "Create",
                 style: TextStyle(
@@ -42,18 +48,37 @@ class CreateTimelineScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TimelineCreateTitle("Date"),
-            TimlineTextBox1("Select Date", (v) {}),
+            TimlineTextBox1(
+              "Select Date",
+              (v) => tempTimeline['date'] = v,
+            ),
             const TimelineCreateTitle("Title"),
-            TimlineTextBox1("Text here", (v) {}),
+            TimlineTextBox1(
+              "Text here",
+              (v) => tempTimeline['date'] = v,
+            ),
             const TimelineCreateTitle("Description"),
-            TimlineTextBox2("Text here", (v) {}),
+            TimlineTextBox2(
+              "Text here",
+              (v) => tempTimeline['date'] = v,
+            ),
             const TimelineCreateTitle("Add Media"),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                for (var i = 0; i < 5; i++)
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 8),
+                InkWell(
+                  onTap: () async {
+                    final ImagePicker _picker = ImagePicker();
+                    final XFile? image =
+                        await _picker.pickImage(source: ImageSource.gallery);
+                    final XFile? photo =
+                        await _picker.pickImage(source: ImageSource.camera);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 4,
+                    ),
                     width: scr.width * .15,
                     height: scr.width * .15,
                     decoration: const BoxDecoration(
@@ -66,6 +91,7 @@ class CreateTimelineScreen extends StatelessWidget {
                       size: 37,
                     ),
                   ),
+                ),
               ],
             )
           ],

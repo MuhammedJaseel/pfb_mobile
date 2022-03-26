@@ -161,7 +161,7 @@ class _CreateFamilyScreenState extends State<CreateFamilyScreen> {
                         width: scr.width - 185,
                         child: SignUpEachTextBox1('Father name', (v) {}),
                       ),
-                      CreateFamilyCheckBox("Mark Death", (v) {
+                      CreateFamilyCheckBox("Not Alive", (v) {
                         setState(() => fatherAlive = !v);
                       })
                     ],
@@ -181,7 +181,7 @@ class _CreateFamilyScreenState extends State<CreateFamilyScreen> {
                       if (!fatherAlive)
                         SizedBox(
                           width: scr.width * .32,
-                          child: CreateDatePicker1('Not Alive', (v) {}),
+                          child: CreateDatePicker1('Memory Date', (v) {}),
                         ),
                       const SizedBox(width: 20),
                       Expanded(
@@ -198,7 +198,7 @@ class _CreateFamilyScreenState extends State<CreateFamilyScreen> {
                         width: scr.width - 185,
                         child: SignUpEachTextBox1('Mother name', (v) {}),
                       ),
-                      CreateFamilyCheckBox("Mark Death", (v) {
+                      CreateFamilyCheckBox("Not Alive", (v) {
                         setState(() => motherAlive = !v);
                       })
                     ],
@@ -218,7 +218,7 @@ class _CreateFamilyScreenState extends State<CreateFamilyScreen> {
                       if (!motherAlive)
                         SizedBox(
                           width: scr.width * .32,
-                          child: CreateDatePicker1('Not Alive', (v) {}),
+                          child: CreateDatePicker1('Memory Date', (v) {}),
                         ),
                       const SizedBox(width: 20),
                       Expanded(

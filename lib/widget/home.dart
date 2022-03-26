@@ -128,3 +128,135 @@ class HometexteditBtn extends StatelessWidget {
     );
   }
 }
+
+class HomePostMaker extends StatefulWidget {
+  const HomePostMaker({Key? key}) : super(key: key);
+
+  @override
+  State<HomePostMaker> createState() => _HomePostMakerState();
+}
+
+class _HomePostMakerState extends State<HomePostMaker> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  bool fieldActive = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Container(
+              width: 60,
+              height: 60,
+              padding: const EdgeInsets.all(1),
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(30)),
+                border: Border.all(width: 2, color: Colors.blue),
+              ),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(30)),
+                child: Image.network(
+                  "https://1.bp.blogspot.com/-Muc21xaQjYg/XluhYO6f6vI/AAAAAAAAPJw/T51WnNCctz4Vxn_9REzJuftkznfuRGKUgCLcBGAsYHQ/s1600/whatsapp%2Bprofile%2Bpic%2B%25281%2529.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(width: 20),
+            const Text(
+              "Whats new !",
+              style: TextStyle(
+                color: Color.fromARGB(255, 132, 132, 132),
+                fontSize: 17,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+          ],
+        ),
+
+        const SizedBox(height: 20),
+        TextField(autofocus: fieldActive),  
+        // Visibility(
+        //   child:
+        //   visible: false,
+        //   maintainState: true,
+        // ),
+        // InkWell(
+        //   onTap: (() => setState((() => fieldActive = true))),
+        //   child: Container(
+        //     height: 100,
+        //     width: 200,
+        //     color: Colors.black26,
+        //   ),
+        // ),
+        SizedBox(
+          child: TextField(
+            onChanged: (v) {},
+            textCapitalization: TextCapitalization.sentences,
+            keyboardType: TextInputType.multiline,
+            maxLines: null,
+            decoration: const InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black26),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.cyan),
+              ),
+              contentPadding: EdgeInsets.all(0),
+              border: InputBorder.none,
+              hintText: "Type message..",
+              hintStyle: TextStyle(
+                color: Color.fromARGB(255, 155, 155, 155),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            style: const TextStyle(
+              color: Color.fromARGB(210, 61, 61, 61),
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+        const SizedBox(height: 20),
+        Row(
+          children: [
+            const Text(
+              "Normal",
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: Color.fromARGB(202, 126, 126, 126),
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Row(
+                children: [
+                  HometexteditBtn(Icons.format_bold, () {}),
+                  HometexteditBtn(Icons.format_italic, () {}),
+                  HometexteditBtn(Icons.format_underline, () {}),
+                  HometexteditBtn(Icons.format_strikethrough, () {}),
+                  HometexteditBtn(Icons.photo, () {}),
+                  HometexteditBtn(Icons.insert_link, () {}),
+                ],
+              ),
+            ),
+            Row(
+              children: [
+                HometexteditBtn(Icons.photo_camera, () {}),
+                HometexteditBtn(Icons.attach_file, () {}),
+                HometexteditBtn(Icons.location_on, () {}),
+              ],
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}
