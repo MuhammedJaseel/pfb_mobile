@@ -28,11 +28,7 @@ class HomeEachStory extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [
-              Color.fromARGB(0, 255, 255, 255),
-              Color.fromARGB(0, 255, 255, 255),
-              Color.fromARGB(123, 0, 0, 0),
-            ],
+            colors: [Color(0x00FFFFFF), Color(0x00FFFFFF), Color(0x7A000000)],
           ),
         ),
         child: Column(
@@ -42,7 +38,7 @@ class HomeEachStory extends StatelessWidget {
             Text(
               story['name'],
               style: const TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: Color(0xFFFFFFFF),
                 fontSize: 11,
                 fontWeight: FontWeight.w700,
               ),
@@ -51,10 +47,7 @@ class HomeEachStory extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: const Text(
                 "5 m",
-                style: TextStyle(
-                  color: Color.fromARGB(186, 255, 255, 255),
-                  fontSize: 8,
-                ),
+                style: TextStyle(color: Color(0xB9FFFFFF), fontSize: 8),
               ),
             ),
           ],
@@ -100,7 +93,7 @@ class HomeOnlineStutusEach extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(width: 1, color: Colors.white),
             color: getStatusColor(member['status']),
-            borderRadius: const BorderRadius.all(Radius.circular(7)),
+            borderRadius: BorderRadius.circular(7),
           ),
         ),
       ),
@@ -119,11 +112,7 @@ class HometexteditBtn extends StatelessWidget {
       onTap: () => fun(),
       child: Padding(
         padding: const EdgeInsets.all(4),
-        child: Icon(
-          icon,
-          color: const Color.fromARGB(202, 126, 126, 126),
-          size: 20,
-        ),
+        child: Icon(icon, color: const Color(0xC97E7E7E), size: 20),
       ),
     );
   }
@@ -155,11 +144,11 @@ class _HomePostMakerState extends State<HomePostMaker> {
               height: 60,
               padding: const EdgeInsets.all(1),
               decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(30)),
+                borderRadius: BorderRadius.circular(30),
                 border: Border.all(width: 2, color: Colors.blue),
               ),
               child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(30)),
+                borderRadius: BorderRadius.circular(30),
                 child: Image.network(
                   "https://1.bp.blogspot.com/-Muc21xaQjYg/XluhYO6f6vI/AAAAAAAAPJw/T51WnNCctz4Vxn_9REzJuftkznfuRGKUgCLcBGAsYHQ/s1600/whatsapp%2Bprofile%2Bpic%2B%25281%2529.jpg",
                   fit: BoxFit.cover,
@@ -170,7 +159,7 @@ class _HomePostMakerState extends State<HomePostMaker> {
             const Text(
               "Whats new !",
               style: TextStyle(
-                color: Color.fromARGB(255, 132, 132, 132),
+                color: Color(0xFF848484),
                 fontSize: 17,
                 fontWeight: FontWeight.w800,
               ),
@@ -179,7 +168,7 @@ class _HomePostMakerState extends State<HomePostMaker> {
         ),
 
         const SizedBox(height: 20),
-        TextField(autofocus: fieldActive),  
+        // TextField(autofocus: fieldActive),
         // Visibility(
         //   child:
         //   visible: false,
